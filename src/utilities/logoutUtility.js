@@ -2,7 +2,7 @@ import axios from "axios"
 
 const logoutUtility = async() => {
     try {
-        const response = await axios.post("/api/v1/employee/logout"); 
+        const response = await axios.post("https://embackend-yfn7.onrender.com/api/v1/employee/logout"); 
 
         if(response.data.success){
             window.localStorage.removeItem('isAuth'); 
