@@ -89,8 +89,6 @@ const LoginPage = () => {
                             {showPassword ? "Hide" : "Show"}
                         </button>
                     </div>
-
-
                 </div>
 
                 {

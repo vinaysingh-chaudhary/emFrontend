@@ -16,6 +16,7 @@ const SignupPage = () => {
         password: ""
     })
 
+    const [showPassword, setShowPassword] = useState(false);
     const [disable, setDisable] = useState(true);
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
@@ -132,8 +133,18 @@ const SignupPage = () => {
                 </div>
 
                 <div className="flex flex-col justify-start items-start gap-2">
-                    <label htmlFor="password" className="text-xl">password: </label>
-                    <input type="password" id="password" name="password" value={formData.password} className="border-black border px-3 py-2 rounded-md w-[400px]" onChange={changeHandler} />
+                    <label htmlFor="password" className="text-xl">Password: </label>
+                    <div className="w-[400px] flex justify-center items-center gap-2">
+                        <input type={showPassword ? "text" : "password"} id="password" name="password" value={formData.password} onChange={changeHandler} className="border-black border px-3 py-2 rounded-md w-full" />
+
+                        <button
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="border-black border px-3 py-2 rounded-md bg-black text-white"
+                        >
+                            {showPassword ? "Hide" : "Show"}
+                        </button>
+                    </div>
                 </div>
 
                 <button className={`flex justify-center items-center border px-10 py-2 rounded-md ${disable === false ? "bg-black text-white" : "bg-black/25 text-black"} `} type="submit" disabled={disable}>{loading ? "Signing up" : "Signup"}</button>
