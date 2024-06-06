@@ -14,7 +14,10 @@ const Dashboard = () => {
     const getEmployees = async () => {
         try {
             setLoading(true);
-            const response = await axios.get("https://embackend-yfn7.onrender.com/api/v1/employee/getemployees");
+            const response = await axios.get("https://embackend-yfn7.onrender.com/api/v1/employee/getemployees", {
+                withCredentials: true
+              });
+              
 
             if (response.data) {
                 setEmployees(response.data.data);
