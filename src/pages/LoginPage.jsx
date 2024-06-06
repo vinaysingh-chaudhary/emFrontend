@@ -32,7 +32,7 @@ const LoginPage = () => {
             setError("")
             setLoading(true)
 
-            const response = await axios.post('/api/v1/employee/login', formData, {
+            const response = await axios.post('https://embackend-yfn7.onrender.com/api/v1/employee/login', formData, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

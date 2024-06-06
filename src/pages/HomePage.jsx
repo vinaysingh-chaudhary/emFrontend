@@ -13,7 +13,7 @@ const HomePage = () => {
     const getEmployee = async () => {
         try {
             setLoading(true)
-            const response = await axios.get("/api/v1/employee/getemployee");
+            const response = await axios.get("https://embackend-yfn7.onrender.com/api/v1/employee/getemployee");
             if (response.data) {
                 setFormData(response.data.data)
             }
