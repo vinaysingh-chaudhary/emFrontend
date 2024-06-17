@@ -60,3 +60,24 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
+//bug fix 
+// const getCookie = (name) => {
+//     const value = `; ${document.cookie}`;
+//     const parts = value.split(`; ${name}=`);
+//     if (parts.length === 2) return parts.pop().split(';').shift();
+//   };
+  
+//   const Navbar = () => {
+//     const [isAuth, setIsAuth] = useState(false);
+//     const [isAdmin, setIsAdmin] = useState(false);
+  
+//     useEffect(() => {
+//       const accessToken = getCookie('accessToken');
+//       setIsAuth(!!accessToken);
+  
+//       let isAdmin = localStorage.getItem("isAdmin");
+//       isAdmin = isAdmin === "true";
+//       setIsAdmin(isAdmin);
+//     }, []);
